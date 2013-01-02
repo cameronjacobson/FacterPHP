@@ -6,7 +6,7 @@ use \FacterPHP\Interfaces\FactInterface;
 
 class Version implements FactInterface
 {
-	public function __construct($argv){
+	public function __construct($argv,$phpini=array()){
 		
 	}
 

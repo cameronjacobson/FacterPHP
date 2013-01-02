@@ -8,7 +8,7 @@ class BCMath implements FactInterface
 {
 	protected $callable;
 
-	public function __construct($argv){
+	public function __construct($argv,$phpini=array()){
 		switch($argv[2]){
 			case 'installed':
 				$this->callable = $this->isInstalled();

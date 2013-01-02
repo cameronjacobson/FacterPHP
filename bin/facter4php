@@ -6,6 +6,7 @@
  *  See lib/facter/* or src/FacterPHP/Fact/* for possible {factname} values
  */
 define('FACTER_PHP_DIR',dirname(__DIR__));
+define('CONFIG_FILENAME','config.ini');
 
 require_once(FACTER_PHP_DIR.'/vendor/autoload.php');
 

@@ -8,7 +8,8 @@ class Facts
 
 	public function __construct($argv){
 		$class = 'FacterPHP\Fact\\'.$argv[1];
-		$this->fact = new $class($argv);
+		$phpini = parse_ini_file(FACTER_PHP_DIR.'/config/'.CONFIG_FILENAME);
+		$this->fact = new $class($argv,$phpini);
 	}
 
 	public function getFact(){
