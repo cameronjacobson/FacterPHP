@@ -1,0 +1,19 @@
+#!/usr/bin/php
+<?php
+/**
+ * Usage: $ bin/facter4php {factname}
+ *
+ *  See lib/facter/* or src/FacterPHP/Fact/* for possible {factname} values
+ */
+define('FACTER_PHP_DIR',dirname(__DIR__));
+
+require_once(FACTER_PHP_DIR.'/vendor/autoload.php');
+
+use FacterPHP\Facts as PhpFact;
+
+try{
+	$fact = new PhpFact($argv);
+	echo $fact->getFact();
+} catch(\Exception $e){
+	file_put_contents('php://stderr', 'ERROR: '.$e->getMessage().PHP_EOL);
+}

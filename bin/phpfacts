@@ -1,0 +1,8 @@
+#!/usr/bin/php
+<?php
+/**
+ * $ bin/phpfacts
+ */
+$PATH = dirname(__DIR__).'/lib/facter';
+
+echo `FACTERLIB="$PATH" facter | grep -E "^php"`;
